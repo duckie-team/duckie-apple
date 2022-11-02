@@ -13,8 +13,6 @@ struct SplashView: View {
             Color.DuckieOrange.edgesIgnoringSafeArea(.all)
             Image.Logo
                 .resizable()
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
                 .frame(width: 96 , height: 96)
         }
 
