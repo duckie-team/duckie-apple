@@ -14,6 +14,8 @@
 		7F7CA13329122DEA00B9D18D /* duckieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA13229122DEA00B9D18D /* duckieTests.swift */; };
 		7F7CA13D29122DEA00B9D18D /* duckieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA13C29122DEA00B9D18D /* duckieUITests.swift */; };
 		7F7CA13F29122DEA00B9D18D /* duckieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA13E29122DEA00B9D18D /* duckieUITestsLaunchTests.swift */; };
+		7F7CA14D2912336D00B9D18D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA14C2912336D00B9D18D /* SplashView.swift */; };
+		7F7CA1512912370D00B9D18D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7CA1502912370D00B9D18D /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		7F7CA13829122DEA00B9D18D /* duckieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = duckieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7CA13C29122DEA00B9D18D /* duckieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = duckieUITests.swift; sourceTree = "<group>"; };
 		7F7CA13E29122DEA00B9D18D /* duckieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = duckieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F7CA14C2912336D00B9D18D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		7F7CA1502912370D00B9D18D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		7F7CA11529122DE800B9D18D = {
 			isa = PBXGroup;
 			children = (
+				7F7CA1502912370D00B9D18D /* Colors.xcassets */,
 				7F7CA12029122DE800B9D18D /* duckie */,
 				7F7CA13129122DEA00B9D18D /* duckieTests */,
 				7F7CA13B29122DEA00B9D18D /* duckieUITests */,
@@ -94,6 +99,8 @@
 		7F7CA12029122DE800B9D18D /* duckie */ = {
 			isa = PBXGroup;
 			children = (
+				7F7CA1522912382C00B9D18D /* util */,
+				7F7CA14B2912335900B9D18D /* ui */,
 				7F7CA12129122DE800B9D18D /* duckieApp.swift */,
 				7F7CA12329122DE800B9D18D /* ContentView.swift */,
 				7F7CA12529122DEA00B9D18D /* Assets.xcassets */,
@@ -125,6 +132,21 @@
 				7F7CA13E29122DEA00B9D18D /* duckieUITestsLaunchTests.swift */,
 			);
 			path = duckieUITests;
+			sourceTree = "<group>";
+		};
+		7F7CA14B2912335900B9D18D /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				7F7CA14C2912336D00B9D18D /* SplashView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		7F7CA1522912382C00B9D18D /* util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F7CA1512912370D00B9D18D /* Colors.xcassets in Resources */,
 				7F7CA12929122DEA00B9D18D /* Preview Assets.xcassets in Resources */,
 				7F7CA12629122DEA00B9D18D /* Assets.xcassets in Resources */,
 			);
@@ -259,6 +282,7 @@
 			files = (
 				7F7CA12429122DE800B9D18D /* ContentView.swift in Sources */,
 				7F7CA12229122DE800B9D18D /* duckieApp.swift in Sources */,
+				7F7CA14D2912336D00B9D18D /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
