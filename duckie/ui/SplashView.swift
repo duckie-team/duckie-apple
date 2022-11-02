@@ -11,7 +11,7 @@ struct SplashView: View {
     var body: some View {
         ZStack {
             Color.DuckieOrange.edgesIgnoringSafeArea(.all)
-            Image("logo")
+            Image.Logo
                 .resizable()
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
