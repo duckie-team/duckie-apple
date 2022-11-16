@@ -8,5 +8,6 @@
 import SwiftUI
 
 extension Image {
-    static let Logo = Image("logo")
+    static let Logo = Image("logo").resizable()
+    static let BackArrow = Image("backArrow")
 }
