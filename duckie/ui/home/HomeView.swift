@@ -21,6 +21,7 @@ struct HomeView: View {
             else {
                 HomeFollowingView()
             }
+    
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
     

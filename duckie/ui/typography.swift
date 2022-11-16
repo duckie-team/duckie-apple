@@ -31,8 +31,8 @@ func Subtitle2(text: String, color: Color = Color.Black) -> some View {
     Text(text).font(.system(size: 12, weight: .bold, design: .rounded)).kerning(0.4).foregroundColor(color)
 }
 
-func Body1(text: String, color: Color = Color.Black) -> some View {
-    Text(text).font(.system(size: 14, weight: .regular)).kerning(0.2).foregroundColor(color)
+func Body1(text: String, color: Color = Color.Black, textAlign: TextAlignment = .leading) -> some View {
+    Text(text).font(.system(size: 14, weight: .regular)).kerning(0.2).foregroundColor(color).multilineTextAlignment(textAlign)
 }
 
 func Body2(text: String, color: Color = Color.Black) -> some View {
