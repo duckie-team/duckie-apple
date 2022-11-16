@@ -10,6 +10,7 @@
 		7F43F395292498EA0053852C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F394292498EA0053852C /* HomeView.swift */; };
 		7F43F398292498FF0053852C /* HomeFollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F397292498FF0053852C /* HomeFollowingView.swift */; };
 		7F43F39B292499160053852C /* HomeRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F39A292499160053852C /* HomeRecommendView.swift */; };
+		7F43F3A02924F34B0053852C /* DuckExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F39F2924F34B0053852C /* DuckExam.swift */; };
 		7F7CA12229122DE800B9D18D /* duckieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA12129122DE800B9D18D /* duckieApp.swift */; };
 		7F7CA12429122DE800B9D18D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA12329122DE800B9D18D /* ContentView.swift */; };
 		7F7CA12629122DEA00B9D18D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7CA12529122DEA00B9D18D /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		7F43F394292498EA0053852C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7F43F397292498FF0053852C /* HomeFollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFollowingView.swift; sourceTree = "<group>"; };
 		7F43F39A292499160053852C /* HomeRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendView.swift; sourceTree = "<group>"; };
+		7F43F39F2924F34B0053852C /* DuckExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckExam.swift; sourceTree = "<group>"; };
 		7F7CA11E29122DE800B9D18D /* duckie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duckie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7CA12129122DE800B9D18D /* duckieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = duckieApp.swift; sourceTree = "<group>"; };
 		7F7CA12329122DE800B9D18D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,29 @@
 			path = recommend;
 			sourceTree = "<group>";
 		};
+		7F43F39C2924F3270053852C /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		7F43F39D2924F32F0053852C /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				7F43F39E2924F3350053852C /* entity */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		7F43F39E2924F3350053852C /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				7F43F39F2924F34B0053852C /* DuckExam.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
 		7F7CA11529122DE800B9D18D = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +166,8 @@
 		7F7CA12029122DE800B9D18D /* duckie */ = {
 			isa = PBXGroup;
 			children = (
+				7F43F39D2924F32F0053852C /* domain */,
+				7F43F39C2924F3270053852C /* data */,
 				7F7CA15529123F5C00B9D18D /* extension */,
 				7F7CA1522912382C00B9D18D /* util */,
 				7F7CA14B2912335900B9D18D /* ui */,
@@ -355,6 +382,7 @@
 				7F43F395292498EA0053852C /* HomeView.swift in Sources */,
 				7F7CA15F2912497500B9D18D /* component.swift in Sources */,
 				7F7CA12429122DE800B9D18D /* ContentView.swift in Sources */,
+				7F43F3A02924F34B0053852C /* DuckExam.swift in Sources */,
 				7F7CA161291250E800B9D18D /* typography.swift in Sources */,
 				7F7CA15729123F6C00B9D18D /* Color.swift in Sources */,
 				7F7CA15D2912440900B9D18D /* OnboardProfileView.swift in Sources */,
