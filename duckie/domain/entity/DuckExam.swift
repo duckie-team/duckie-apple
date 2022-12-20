@@ -5,8 +5,6 @@
 //  Created by DongHo Lee on 2022/11/16.
 //
 
-import SwiftUI
-
 struct DuckExam {
     let id: Int
     let title: String
@@ -14,4 +12,6 @@ struct DuckExam {
     let buttonTitle: String
     let hasMusic: Bool
     let thumbnail: String = ""
+    let user: User = User()
+    let solvedCount: Int = 20
 }

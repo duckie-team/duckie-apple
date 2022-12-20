@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F168002295190B500B672C1 /* ExamRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F168001295190B500B672C1 /* ExamRecommendation.swift */; };
+		7F16800429519C2600B672C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16800329519C2600B672C1 /* User.swift */; };
 		7F43F395292498EA0053852C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F394292498EA0053852C /* HomeView.swift */; };
 		7F43F398292498FF0053852C /* HomeFollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F397292498FF0053852C /* HomeFollowingView.swift */; };
 		7F43F39B292499160053852C /* HomeRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F39A292499160053852C /* HomeRecommendView.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F168001295190B500B672C1 /* ExamRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRecommendation.swift; sourceTree = "<group>"; };
+		7F16800329519C2600B672C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7F43F394292498EA0053852C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7F43F397292498FF0053852C /* HomeFollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFollowingView.swift; sourceTree = "<group>"; };
 		7F43F39A292499160053852C /* HomeRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				7F43F39F2924F34B0053852C /* DuckExam.swift */,
+				7F168001295190B500B672C1 /* ExamRecommendation.swift */,
+				7F16800329519C2600B672C1 /* User.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -385,10 +391,12 @@
 				7F43F3A02924F34B0053852C /* DuckExam.swift in Sources */,
 				7F7CA161291250E800B9D18D /* typography.swift in Sources */,
 				7F7CA15729123F6C00B9D18D /* Color.swift in Sources */,
+				7F16800429519C2600B672C1 /* User.swift in Sources */,
 				7F7CA15D2912440900B9D18D /* OnboardProfileView.swift in Sources */,
 				7F43F39B292499160053852C /* HomeRecommendView.swift in Sources */,
 				7F7CA12229122DE800B9D18D /* duckieApp.swift in Sources */,
 				7F43F398292498FF0053852C /* HomeFollowingView.swift in Sources */,
+				7F168002295190B500B672C1 /* ExamRecommendation.swift in Sources */,
 				7F7CA14D2912336D00B9D18D /* SplashView.swift in Sources */,
 				7F7CA1592912427700B9D18D /* Image.swift in Sources */,
 			);

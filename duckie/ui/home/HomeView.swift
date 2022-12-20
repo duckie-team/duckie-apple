@@ -11,18 +11,20 @@ struct HomeView: View {
     @State var currentSelectedIndex = 0
     
     var body: some View {
-        VStack(alignment: .leading){
-            HomeTopAppBar(currentSelectedIndex: currentSelectedIndex) { index in
-                currentSelectedIndex = index
-            }
-            if(currentSelectedIndex == 0){
-                HomeRecommendView()
-            }
-            else {
-                HomeFollowingView()
-            }
-    
-        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+
+        ScrollView {
+            VStack(alignment: .leading){
+                HomeTopAppBar(currentSelectedIndex: currentSelectedIndex) { index in
+                    currentSelectedIndex = index
+                }
+                if(currentSelectedIndex == 0){
+                    HomeRecommendView()
+                }
+                else {
+                    HomeFollowingView()
+                }
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        }
     }
     
     @ViewBuilder
