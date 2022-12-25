@@ -18,7 +18,12 @@ func TitleAndDescription(title: String, description: String) -> some View{
 
 func RoundedLargeButton(title: String, onClick: @escaping () -> Void, enabled: Bool) -> some View {
 
-    Subtitle(text: title, color: Color.White).frame(maxWidth: .infinity).padding(.vertical, 13).background(enabled ? Color.DuckieOrange : Color.Gray2).cornerRadius(8)
-    
-
+    Subtitle(text: title, color: Color.White)
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 13)
+        .background(enabled ? Color.DuckieOrange : Color.Gray2)
+        .cornerRadius(8)
+        .onTapGesture {
+            onClick()
+        }
 }

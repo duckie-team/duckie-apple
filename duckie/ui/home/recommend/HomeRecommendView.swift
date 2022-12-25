@@ -50,9 +50,9 @@ struct HomeRecommendView: View {
         }.background(.red)
     }
     private func getJumbotrons() -> [DuckExam] {
-        return [DuckExam(id: 0,title: "제 1회 도로 패션영역", description: "아 저 근데 너무 재밌을거 같아요\n내 시험 최고", buttonTitle: "어떻게 풀어보자~", hasMusic: true),
-                DuckExam(id: 1,title: "제 1회 도로 패션영역", description: "아 저 근데 너무 재밌을거 같아요\n내 시험 최고", buttonTitle: "어떻게 풀어보자~", hasMusic: true),
-                DuckExam(id: 2,title: "제 1회 도로 패션영역", description: "아 저 근데 너무 재밌을거 같아요\n내 시험 최고", buttonTitle: "어떻게 풀어보자~", hasMusic: true),
+        return [DuckExam(id: 0,title: "제 1회 도로 패션영역", description: "아 저 근데 너무 재밌을거 같아요\n내 시험 최고", hasMusic: true),
+                DuckExam(id: 1,title: "제 1회 도로 패션영역", description: "아 저 근데 너무 재밌을거 같아요\n내 시험 최고", hasMusic: true),
+                DuckExam(id: 2,title: "제 1회 도로 패션영역", description: "아 저 근데 너무 재밌을거 같아요\n내 시험 최고", hasMusic: true),
         ]
     }
     

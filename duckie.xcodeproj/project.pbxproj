@@ -9,10 +9,20 @@
 /* Begin PBXBuildFile section */
 		7F168002295190B500B672C1 /* ExamRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F168001295190B500B672C1 /* ExamRecommendation.swift */; };
 		7F16800429519C2600B672C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16800329519C2600B672C1 /* User.swift */; };
+		7F1680062958440E00B672C1 /* OnboardCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1680052958440E00B672C1 /* OnboardCategoryView.swift */; };
+		7F1680082958483900B672C1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1680072958483900B672C1 /* Category.swift */; };
+		7F16800A2958484000B672C1 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1680092958484000B672C1 /* Tag.swift */; };
+		7F16800D29584D0A00B672C1 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16800C29584D0A00B672C1 /* Shape.swift */; };
 		7F43F395292498EA0053852C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F394292498EA0053852C /* HomeView.swift */; };
 		7F43F398292498FF0053852C /* HomeFollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F397292498FF0053852C /* HomeFollowingView.swift */; };
 		7F43F39B292499160053852C /* HomeRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F39A292499160053852C /* HomeRecommendView.swift */; };
 		7F43F3A02924F34B0053852C /* DuckExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F39F2924F34B0053852C /* DuckExam.swift */; };
+		7F69A2142958688500070841 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A2132958688500070841 /* View.swift */; };
+		7F69A21729587D6E00070841 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7F69A21629587D6E00070841 /* Alamofire */; };
+		7F69A21A29588E1C00070841 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A21929588E1C00070841 /* NetworkResult.swift */; };
+		7F69A21D2958935100070841 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7F69A21C2958935100070841 /* SwiftyJSON */; };
+		7F69A22029589DCB00070841 /* CategoryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A21F29589DCB00070841 /* CategoryListResponse.swift */; };
+		7F69A2222958A64600070841 /* OnboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A2212958A64600070841 /* OnboardViewModel.swift */; };
 		7F7CA12229122DE800B9D18D /* duckieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA12129122DE800B9D18D /* duckieApp.swift */; };
 		7F7CA12429122DE800B9D18D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA12329122DE800B9D18D /* ContentView.swift */; };
 		7F7CA12629122DEA00B9D18D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7CA12529122DEA00B9D18D /* Assets.xcassets */; };
@@ -49,10 +59,18 @@
 /* Begin PBXFileReference section */
 		7F168001295190B500B672C1 /* ExamRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRecommendation.swift; sourceTree = "<group>"; };
 		7F16800329519C2600B672C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F1680052958440E00B672C1 /* OnboardCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardCategoryView.swift; sourceTree = "<group>"; };
+		7F1680072958483900B672C1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		7F1680092958484000B672C1 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		7F16800C29584D0A00B672C1 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		7F43F394292498EA0053852C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7F43F397292498FF0053852C /* HomeFollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFollowingView.swift; sourceTree = "<group>"; };
 		7F43F39A292499160053852C /* HomeRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendView.swift; sourceTree = "<group>"; };
 		7F43F39F2924F34B0053852C /* DuckExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckExam.swift; sourceTree = "<group>"; };
+		7F69A2132958688500070841 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		7F69A21929588E1C00070841 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		7F69A21F29589DCB00070841 /* CategoryListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListResponse.swift; sourceTree = "<group>"; };
+		7F69A2212958A64600070841 /* OnboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewModel.swift; sourceTree = "<group>"; };
 		7F7CA11E29122DE800B9D18D /* duckie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duckie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7CA12129122DE800B9D18D /* duckieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = duckieApp.swift; sourceTree = "<group>"; };
 		7F7CA12329122DE800B9D18D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F69A21D2958935100070841 /* SwiftyJSON in Frameworks */,
+				7F69A21729587D6E00070841 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +146,8 @@
 		7F43F39C2924F3270053852C /* data */ = {
 			isa = PBXGroup;
 			children = (
+				7F69A21E29589DBF00070841 /* dto */,
+				7F69A21829588D9500070841 /* network */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -144,8 +166,26 @@
 				7F43F39F2924F34B0053852C /* DuckExam.swift */,
 				7F168001295190B500B672C1 /* ExamRecommendation.swift */,
 				7F16800329519C2600B672C1 /* User.swift */,
+				7F1680072958483900B672C1 /* Category.swift */,
+				7F1680092958484000B672C1 /* Tag.swift */,
 			);
 			path = entity;
+			sourceTree = "<group>";
+		};
+		7F69A21829588D9500070841 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				7F69A21929588E1C00070841 /* NetworkResult.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		7F69A21E29589DBF00070841 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				7F69A21F29589DCB00070841 /* CategoryListResponse.swift */,
+			);
+			path = dto;
 			sourceTree = "<group>";
 		};
 		7F7CA11529122DE800B9D18D = {
@@ -234,6 +274,8 @@
 			children = (
 				7F7CA15629123F6C00B9D18D /* Color.swift */,
 				7F7CA1582912427700B9D18D /* Image.swift */,
+				7F16800C29584D0A00B672C1 /* Shape.swift */,
+				7F69A2132958688500070841 /* View.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -250,6 +292,8 @@
 			isa = PBXGroup;
 			children = (
 				7F7CA15C2912440900B9D18D /* OnboardProfileView.swift */,
+				7F1680052958440E00B672C1 /* OnboardCategoryView.swift */,
+				7F69A2212958A64600070841 /* OnboardViewModel.swift */,
 			);
 			path = onboard;
 			sourceTree = "<group>";
@@ -270,6 +314,10 @@
 			dependencies = (
 			);
 			name = duckie;
+			packageProductDependencies = (
+				7F69A21629587D6E00070841 /* Alamofire */,
+				7F69A21C2958935100070841 /* SwiftyJSON */,
+			);
 			productName = duckie;
 			productReference = 7F7CA11E29122DE800B9D18D /* duckie.app */;
 			productType = "com.apple.product-type.application";
@@ -342,6 +390,10 @@
 				Base,
 			);
 			mainGroup = 7F7CA11529122DE800B9D18D;
+			packageReferences = (
+				7F69A21529587D6E00070841 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7F69A21B2958935100070841 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 7F7CA11F29122DE800B9D18D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -385,20 +437,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F16800A2958484000B672C1 /* Tag.swift in Sources */,
+				7F1680062958440E00B672C1 /* OnboardCategoryView.swift in Sources */,
 				7F43F395292498EA0053852C /* HomeView.swift in Sources */,
 				7F7CA15F2912497500B9D18D /* component.swift in Sources */,
 				7F7CA12429122DE800B9D18D /* ContentView.swift in Sources */,
 				7F43F3A02924F34B0053852C /* DuckExam.swift in Sources */,
+				7F69A2142958688500070841 /* View.swift in Sources */,
 				7F7CA161291250E800B9D18D /* typography.swift in Sources */,
 				7F7CA15729123F6C00B9D18D /* Color.swift in Sources */,
+				7F1680082958483900B672C1 /* Category.swift in Sources */,
+				7F69A2222958A64600070841 /* OnboardViewModel.swift in Sources */,
 				7F16800429519C2600B672C1 /* User.swift in Sources */,
+				7F69A21A29588E1C00070841 /* NetworkResult.swift in Sources */,
 				7F7CA15D2912440900B9D18D /* OnboardProfileView.swift in Sources */,
 				7F43F39B292499160053852C /* HomeRecommendView.swift in Sources */,
 				7F7CA12229122DE800B9D18D /* duckieApp.swift in Sources */,
+				7F16800D29584D0A00B672C1 /* Shape.swift in Sources */,
 				7F43F398292498FF0053852C /* HomeFollowingView.swift in Sources */,
 				7F168002295190B500B672C1 /* ExamRecommendation.swift in Sources */,
 				7F7CA14D2912336D00B9D18D /* SplashView.swift in Sources */,
 				7F7CA1592912427700B9D18D /* Image.swift in Sources */,
+				7F69A22029589DCB00070841 /* CategoryListResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +620,7 @@
 				DEVELOPMENT_TEAM = NP3DCVXSX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = duckie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -589,7 +649,7 @@
 				DEVELOPMENT_TEAM = NP3DCVXSX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = duckie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -719,6 +779,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F69A21529587D6E00070841 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		7F69A21B2958935100070841 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F69A21629587D6E00070841 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F69A21529587D6E00070841 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7F69A21C2958935100070841 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F69A21B2958935100070841 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7F7CA11629122DE800B9D18D /* Project object */;
 }
