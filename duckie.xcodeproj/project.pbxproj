@@ -24,6 +24,7 @@
 		7F69A22029589DCB00070841 /* CategoryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A21F29589DCB00070841 /* CategoryListResponse.swift */; };
 		7F69A2222958A64600070841 /* OnboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A2212958A64600070841 /* OnboardViewModel.swift */; };
 		7F69A2242958B1E800070841 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A2232958B1E800070841 /* OnboardView.swift */; };
+		7F7B8FC82958CD200035D642 /* OnboaradTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B8FC72958CD200035D642 /* OnboaradTagView.swift */; };
 		7F7CA12229122DE800B9D18D /* duckieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA12129122DE800B9D18D /* duckieApp.swift */; };
 		7F7CA12429122DE800B9D18D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA12329122DE800B9D18D /* ContentView.swift */; };
 		7F7CA12629122DEA00B9D18D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7CA12529122DEA00B9D18D /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		7F69A21F29589DCB00070841 /* CategoryListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListResponse.swift; sourceTree = "<group>"; };
 		7F69A2212958A64600070841 /* OnboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewModel.swift; sourceTree = "<group>"; };
 		7F69A2232958B1E800070841 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		7F7B8FC72958CD200035D642 /* OnboaradTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboaradTagView.swift; sourceTree = "<group>"; };
 		7F7CA11E29122DE800B9D18D /* duckie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duckie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7CA12129122DE800B9D18D /* duckieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = duckieApp.swift; sourceTree = "<group>"; };
 		7F7CA12329122DE800B9D18D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				7F1680052958440E00B672C1 /* OnboardCategoryView.swift */,
 				7F69A2212958A64600070841 /* OnboardViewModel.swift */,
 				7F69A2232958B1E800070841 /* OnboardView.swift */,
+				7F7B8FC72958CD200035D642 /* OnboaradTagView.swift */,
 			);
 			path = onboard;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				7F168002295190B500B672C1 /* ExamRecommendation.swift in Sources */,
 				7F69A2242958B1E800070841 /* OnboardView.swift in Sources */,
 				7F7CA14D2912336D00B9D18D /* SplashView.swift in Sources */,
+				7F7B8FC82958CD200035D642 /* OnboaradTagView.swift in Sources */,
 				7F7CA1592912427700B9D18D /* Image.swift in Sources */,
 				7F69A22029589DCB00070841 /* CategoryListResponse.swift in Sources */,
 			);

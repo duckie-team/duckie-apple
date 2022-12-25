@@ -16,7 +16,7 @@ struct OnboardView : View {
             ScrollViewReader{ reader in
                 ScrollView(.horizontal) {
                     HStack(spacing: 0) {
-                        ForEach(0..<2) { index in
+                        ForEach(0..<3) { index in
                             if( index == 0){
                                 OnboardProfileView(onClickNext: {
                                     withAnimation{
@@ -30,7 +30,20 @@ struct OnboardView : View {
                                         withAnimation{
                                             reader.scrollTo(screenID[0])
                                         }
-                                    }).id(screenID[index])
+                                    },
+                                    onClickNext: {
+                                        withAnimation {
+                                            reader.scrollTo(screenID[2])
+                                        }
+                                    }
+                                ).id(screenID[index])
+                            }
+                            else if ( index == 2){
+                                OnboardTagView(onClickPrev: {
+                                    withAnimation {
+                                        reader.scrollTo(screenID[1])
+                                    }
+                                }).id(screenID[index])
                             }
                         }
                         .frame(width: proxy.size.width, height: proxy.size.height)

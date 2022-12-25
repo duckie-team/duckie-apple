@@ -12,11 +12,13 @@ import SwiftyJSON
 struct OnboardCategoryView: View {
     
     let onClickPrev: () -> Void
+    let onClickNext: () -> Void
 
     @StateObject var viewModel = OnboardViewModel()
     
-    init(onClickPrev: @escaping () -> Void) {
+    init(onClickPrev: @escaping () -> Void, onClickNext: @escaping () -> Void) {
         self.onClickPrev = onClickPrev
+        self.onClickNext = onClickNext
         UIScrollView.appearance().bounces = false
     }
     
@@ -49,7 +51,7 @@ struct OnboardCategoryView: View {
             
             ZStack {
                 RoundedLargeButton(title: "다음", onClick: {
-                    print("onClick!")
+                    onClickNext()
                 }, enabled: true).padding(12)
                 
             }
@@ -102,12 +104,4 @@ struct OnboardCategoryView: View {
         }
     }
     
-}
-
-struct OnboardCategory_Preview: PreviewProvider {
-    static var previews: some View {
-        OnboardCategoryView(onClickPrev: {
-            
-        })
-    }
 }

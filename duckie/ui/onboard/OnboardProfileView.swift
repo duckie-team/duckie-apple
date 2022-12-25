@@ -12,20 +12,28 @@ struct OnboardProfileView: View {
     @State var nickname: String = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            OnboardTopAppBar {
-                
-            }
-            Spacer().frame(height:12)
-            TitleAndDescription(
-                title: "프로필을 설정해주세요!",
-                description: "언제든 변결할 수 있어요. 나만의 이름을 지어봐요 :)"
-            )
-            Spacer().frame(height:12)
-            CountableTextField(
-                placeholder: "닉네임 입력",
-                text : $nickname
-            )
+        ZStack(alignment: .bottom) {
+            VStack(alignment: .leading) {
+                OnboardTopAppBar {
+                    
+                }
+                Spacer().frame(height:12)
+                TitleAndDescription(
+                    title: "프로필을 설정해주세요!",
+                    description: "언제든 변결할 수 있어요. 나만의 이름을 지어봐요 :)"
+                )
+                Spacer().frame(height:32)
+                ProfileEditButton(onClick: {
+                    print("Profile Edit Click")
+                })
+                Spacer().frame(height:32)
+                CountableTextField(
+                    placeholder: "닉네임 입력",
+                    text : $nickname
+                )
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                .padding(.horizontal, 20)
+    
             RoundedLargeButton(
                 title: "다음",
                 onClick : {
@@ -33,7 +41,12 @@ struct OnboardProfileView: View {
                 },
                 enabled: nickname.count > 5
             )
-        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top).padding(.horizontal, 20)
+            .padding(12)
+            .frame(width: UIScreen.main.bounds.width, height: 120)
+                
+        }.onTapGesture {
+            
+        }
 
     }
 
@@ -51,6 +64,17 @@ struct OnboardProfileView: View {
 
                 
         }
+    }
+    
+    @ViewBuilder
+    private func ProfileEditButton(onClick: @escaping() -> Void) -> some View {
+        ZStack {
+            AsyncImage(url: URL(string: "http://k.kakaocdn.net/dn/Phk5S/btrI3uKwKnG/QHa33dTjgStZQoTB7e87Gk/img_640x640.jpg")).cornerRadius(12)
+                .onTapGesture {
+                    onClick()
+                }
+                .frame(width:80, height:80)
+        }.frame(minWidth: 0, maxWidth: .infinity,alignment: .center)
     }
 }
 
