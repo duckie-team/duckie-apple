@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct OnboardProfileView: View {
+    let onClickNext: () -> Void
     @State var nickname: String = ""
     
     var body: some View {
         VStack(alignment: .leading) {
-            OnboardTopAppBar()
+            OnboardTopAppBar {
+                
+            }
             Spacer().frame(height:12)
             TitleAndDescription(
                 title: "프로필을 설정해주세요!",
@@ -26,7 +29,7 @@ struct OnboardProfileView: View {
             RoundedLargeButton(
                 title: "다음",
                 onClick : {
-                    
+                    onClickNext()
                 },
                 enabled: nickname.count > 5
             )
@@ -55,14 +58,17 @@ struct OnboardProfileView: View {
 
 struct OnboardProfile_Preview: PreviewProvider {
     static var previews: some View {
-        OnboardProfileView()
+        OnboardProfileView(onClickNext: {})
     }
 }
 
 
 @ViewBuilder
-func OnboardTopAppBar() -> some View {
+func OnboardTopAppBar(onClickBackArrow: @escaping() -> Void) -> some View {
     HStack(alignment: .top) {
         Image.BackArrow.resizable().frame(width: 24,height: 24)
     }.frame(maxWidth: .infinity, maxHeight: 48, alignment: .leading)
+        .onTapGesture {
+            onClickBackArrow()
+        }
 }

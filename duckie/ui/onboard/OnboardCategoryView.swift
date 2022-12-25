@@ -10,10 +10,13 @@ import Alamofire
 import SwiftyJSON
 
 struct OnboardCategoryView: View {
+    
+    let onClickPrev: () -> Void
 
     @StateObject var viewModel = OnboardViewModel()
     
-    init() {
+    init(onClickPrev: @escaping () -> Void) {
+        self.onClickPrev = onClickPrev
         UIScrollView.appearance().bounces = false
     }
     
@@ -23,7 +26,11 @@ struct OnboardCategoryView: View {
         ZStack(alignment : .bottom) {
             VStack(alignment: .leading) {
                 
-                OnboardTopAppBar()
+                OnboardTopAppBar(
+                    onClickBackArrow: {
+                        onClickPrev()
+                    }
+                )
                 Spacer().frame(height:12)
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading){
@@ -99,6 +106,8 @@ struct OnboardCategoryView: View {
 
 struct OnboardCategory_Preview: PreviewProvider {
     static var previews: some View {
-        OnboardCategoryView()
+        OnboardCategoryView(onClickPrev: {
+            
+        })
     }
 }

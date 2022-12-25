@@ -24,6 +24,7 @@ func RoundedLargeButton(title: String, onClick: @escaping () -> Void, enabled: B
         .background(enabled ? Color.DuckieOrange : Color.Gray2)
         .cornerRadius(8)
         .onTapGesture {
+            print("What the fuck")
             onClick()
         }
 }
