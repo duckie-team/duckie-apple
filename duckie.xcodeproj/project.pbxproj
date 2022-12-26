@@ -17,6 +17,7 @@
 		7F43F398292498FF0053852C /* HomeFollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F397292498FF0053852C /* HomeFollowingView.swift */; };
 		7F43F39B292499160053852C /* HomeRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F39A292499160053852C /* HomeRecommendView.swift */; };
 		7F43F3A02924F34B0053852C /* DuckExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43F39F2924F34B0053852C /* DuckExam.swift */; };
+		7F473ABD29597A920053EDB9 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 7F473ABC29597A920053EDB9 /* SwiftUIPager */; };
 		7F69A2142958688500070841 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A2132958688500070841 /* View.swift */; };
 		7F69A21729587D6E00070841 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7F69A21629587D6E00070841 /* Alamofire */; };
 		7F69A21A29588E1C00070841 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A21929588E1C00070841 /* NetworkResult.swift */; };
@@ -25,6 +26,7 @@
 		7F69A2222958A64600070841 /* OnboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A2212958A64600070841 /* OnboardViewModel.swift */; };
 		7F69A2242958B1E800070841 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69A2232958B1E800070841 /* OnboardView.swift */; };
 		7F7B8FC82958CD200035D642 /* OnboaradTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B8FC72958CD200035D642 /* OnboaradTagView.swift */; };
+		7F7B8FCB2959080D0035D642 /* SwiftUIFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 7F7B8FCA2959080D0035D642 /* SwiftUIFlow */; };
 		7F7CA12229122DE800B9D18D /* duckieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA12129122DE800B9D18D /* duckieApp.swift */; };
 		7F7CA12429122DE800B9D18D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CA12329122DE800B9D18D /* ContentView.swift */; };
 		7F7CA12629122DEA00B9D18D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7CA12529122DEA00B9D18D /* Assets.xcassets */; };
@@ -100,6 +102,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F69A21D2958935100070841 /* SwiftyJSON in Frameworks */,
+				7F7B8FCB2959080D0035D642 /* SwiftUIFlow in Frameworks */,
+				7F473ABD29597A920053EDB9 /* SwiftUIPager in Frameworks */,
 				7F69A21729587D6E00070841 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +327,8 @@
 			packageProductDependencies = (
 				7F69A21629587D6E00070841 /* Alamofire */,
 				7F69A21C2958935100070841 /* SwiftyJSON */,
+				7F7B8FCA2959080D0035D642 /* SwiftUIFlow */,
+				7F473ABC29597A920053EDB9 /* SwiftUIPager */,
 			);
 			productName = duckie;
 			productReference = 7F7CA11E29122DE800B9D18D /* duckie.app */;
@@ -399,6 +405,8 @@
 			packageReferences = (
 				7F69A21529587D6E00070841 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7F69A21B2958935100070841 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				7F7B8FC92959080D0035D642 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */,
+				7F473ABB29597A920053EDB9 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = 7F7CA11F29122DE800B9D18D /* Products */;
 			projectDirPath = "";
@@ -789,6 +797,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7F473ABB29597A920053EDB9 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		7F69A21529587D6E00070841 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -805,9 +821,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		7F7B8FC92959080D0035D642 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ciaranrobrien/SwiftUIFlow";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7F473ABC29597A920053EDB9 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F473ABB29597A920053EDB9 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
 		7F69A21629587D6E00070841 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7F69A21529587D6E00070841 /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -817,6 +846,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7F69A21B2958935100070841 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		7F7B8FCA2959080D0035D642 /* SwiftUIFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F7B8FC92959080D0035D642 /* XCRemoteSwiftPackageReference "SwiftUIFlow" */;
+			productName = SwiftUIFlow;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

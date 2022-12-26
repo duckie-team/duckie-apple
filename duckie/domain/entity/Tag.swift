@@ -8,5 +8,6 @@
 import Foundation
 
 struct Tag: Codable {
-    let id: Int = 0
+    let id: Int
+    let name: String
 }
