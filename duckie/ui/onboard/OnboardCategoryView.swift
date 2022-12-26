@@ -13,12 +13,16 @@ struct OnboardCategoryView: View {
     
     let onClickPrev: () -> Void
     let onClickNext: () -> Void
-
-    @StateObject var viewModel = OnboardViewModel()
+    let viewModel: OnboardViewModel
     
-    init(onClickPrev: @escaping () -> Void, onClickNext: @escaping () -> Void) {
+    init(
+        onClickPrev: @escaping () -> Void,
+        onClickNext: @escaping () -> Void,
+        viewModel: OnboardViewModel
+    ) {
         self.onClickPrev = onClickPrev
         self.onClickNext = onClickNext
+        self.viewModel = viewModel
         UIScrollView.appearance().bounces = false
     }
     
@@ -52,7 +56,7 @@ struct OnboardCategoryView: View {
             ZStack {
                 RoundedLargeButton(title: "다음", onClick: {
                     onClickNext()
-                }, enabled: true).padding(12)
+                }, enabled: viewModel.selectedCategories.isEmpty == false).padding(12)
                 
             }
             .frame(width: UIScreen.main.bounds.width, height: 120)
@@ -65,7 +69,7 @@ struct OnboardCategoryView: View {
     @ViewBuilder
     private func CategoryGridView(
         categories: [Category],
-        selectedCategories: [Int],
+        selectedCategories: [Category],
         onClick: @escaping(Category) -> Void
     ) -> some View {
         let columnLayout = Array(repeating:GridItem(), count: 3)
@@ -77,8 +81,8 @@ struct OnboardCategoryView: View {
     }
     
     @ViewBuilder
-    private func CategoryItem(item: Category, onClick: @escaping(Category) -> Void, selectedCategories: [Int]) -> some View {
-        let isSelected = selectedCategories.contains(item.id)
+    private func CategoryItem(item: Category, onClick: @escaping(Category) -> Void, selectedCategories: [Category]) -> some View {
+        let isSelected = selectedCategories.contains( where: { $0.id == item.id})
         VStack{
             ZStack {
                 AsyncImage(url: URL(string: item.thumbnailUrl))

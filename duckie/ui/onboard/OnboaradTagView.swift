@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardTagView : View {
     
+    let viewModel: OnboardViewModel
     let onClickPrev: () -> Void
     
     var body: some View {
@@ -23,15 +24,16 @@ struct OnboardTagView : View {
                 Title2(text: "추가한 태그")
                 Spacer().frame(height: 12)
    
-                DeletableTagList(tags: [Tag(id:0, name: "마"), Tag(id:1, name: "덕키"), Tag(id:2,name: "해터"), Tag(id:3, name: "에밀리"),Tag(id:4, name: "파리"), Tag(id:5, name:"good"), Tag(id:6,name:"반지의 "), Tag(id:7,name:"제왕"),Tag(id:8,name:"나는 솔로"),
-                                        Tag(id:10,name:"세모"), Tag(id:11,name:"침착맨"), Tag(id:12,name: "주호민"), Tag(id:13, name:"김풍"),Tag(id:14,name:"옾카페"), Tag(id:15,name:"엠씨"), Tag(id:16,name:"저스트절크"), Tag(id:17,name:"정기원"),Tag(id:81,name:"유자꿀")]) { tag in
-                    
-                    
+                SelectedTags(tags: viewModel.selectedTags) { tag in
+                    viewModel.selectTag(tag: tag)
                 }
-                CategoryAndPopularTags(category: Category(id:0, name:"영화"), onClick: { tag in
-                    
-                })
-                
+                SelectedCategories(
+                    categories: viewModel.selectedCategories,
+                    selectedTags: viewModel.selectedTags,
+                    onClick: { tag in
+                        viewModel.selectTag(tag: tag)
+                    }
+                )
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .padding(.horizontal, 20)

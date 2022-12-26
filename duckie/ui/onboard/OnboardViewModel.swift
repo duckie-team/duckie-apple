@@ -9,19 +9,29 @@ import Foundation
 import Alamofire
 
 class OnboardViewModel: ObservableObject {
-    @Published var selectedCategories: [Int] = []
+    @Published var selectedCategories: [Category] = []
+    @Published var selectedTags: [Tag] = []
     @Published var categories : [Category] = []
     
     func setCategories(categories: [Category]){
         self.categories = categories
     }
     
+    func selectTag(tag: Tag){
+        if let index: Int = selectedTags.firstIndex(where: { $0.id == tag.id} ) {
+            selectedTags.remove(at: index)
+        }
+        else {
+            selectedTags.append(tag)
+        }
+    }
+    
     func selectCategory(category: Category){
-        if let index: Int = selectedCategories.firstIndex(of: category.id) {
+        if let index: Int = selectedCategories.firstIndex(where: { $0.id == category.id}) {
             selectedCategories.remove(at: index)
         }
         else {
-            selectedCategories.append(category.id)
+            selectedCategories.append(category)
         }
     }
     

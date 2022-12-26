@@ -25,8 +25,9 @@ func RoundedLargeButton(title: String, onClick: @escaping () -> Void, enabled: B
         .background(enabled ? Color.DuckieOrange : Color.Gray2)
         .cornerRadius(8)
         .onTapGesture {
-            print("What the fuck")
-            onClick()
+            if(enabled){
+                onClick()
+            }
         }
 }
 
@@ -41,9 +42,10 @@ func DeletableTag(tag: Tag, onClickDelete: @escaping (Tag) -> Void) -> some View
     .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 10))
     .overlay(RoundedRectangle(cornerRadius: 18).stroke(Color.Gray3, lineWidth: 1))
     
+    
 }
 
-func DeletableTagList(tags: [Tag], onClickDelete: @escaping (Tag) -> Void) -> some View {
+func SelectedTags(tags: [Tag], onClickDelete: @escaping (Tag) -> Void) -> some View {
   
     VFlow(alignment: .leading){
         ForEach(tags, id:\.id){ item in
@@ -54,27 +56,36 @@ func DeletableTagList(tags: [Tag], onClickDelete: @escaping (Tag) -> Void) -> so
 }
 
 func SelectableTag(isSelected: Bool, tag: Tag, onClick: @escaping (Tag) -> Void) -> some View {
-    ZStack {
+    VStack {
         Title2(text: tag.name, color: isSelected ? Color.DuckieOrange : Color.Black)
     }
     .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
     .overlay(RoundedRectangle(cornerRadius: 18).stroke(isSelected ? Color.DuckieOrange : Color.Gray3, lineWidth: 1))
     .onTapGesture {
-        print(tag)
         onClick(tag)
+    }
+
+}
+
+private func CategoryAndPopularTags(selectedTags: [Tag], category: Category, onClick: @escaping (Tag) -> Void) -> some View {
+
+    VStack(alignment: .leading){
+        Title2(text: category.name)
+        Spacer().frame(height: 12)
+        VFlow(alignment: .leading){
+            ForEach(category.popularTags, id:\.id){ tag in
+                let isSelected = selectedTags.contains(where: {$0.id == tag.id})
+                SelectableTag(isSelected: isSelected, tag: tag, onClick: onClick)
+            }
+        }
     }
 }
 
-func CategoryAndPopularTags(category: Category, onClick: @escaping (Tag) -> Void) -> some View {
 
-        ScrollView(.horizontal){
-            HStack{
-                ForEach(category.popularTags, id:\.id){ tag in
-                    //SelectableTag(isSelected: true, tag: tag, onClick: onClick)
-                    Title2(text: tag.name)
-                }
-                
-            }
-        }.scrollDisabled(false)
-    
+func SelectedCategories(categories: [Category], selectedTags: [Tag], onClick: @escaping (Tag) -> Void) -> some View {
+    VStack(alignment: .leading){
+        ForEach(categories, id:\.id){ category in
+            CategoryAndPopularTags(selectedTags: selectedTags, category: category, onClick: onClick)
+        }
+    }
 }
