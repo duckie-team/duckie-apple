@@ -9,6 +9,13 @@ import Foundation
 import Alamofire
 
 class OnboardViewModel: ObservableObject {
+    
+    let headers: HTTPHeaders = [
+        "x-duckie-client": "ios",
+        "x-duckie-version": "good",
+        "x-duckie-device-name": "good",
+        "Accept": "application/json"
+    ]
 
     @Published var nickName: String = "" {
         didSet {
@@ -48,7 +55,8 @@ class OnboardViewModel: ObservableObject {
     }
     
     private func fetch(){
-        AF.request("http://api-staging.goose-duckie.com:3000/categories?withPopularTags=true")
+        AF.request("http://api-staging.goose-duckie.com:3000/categories?withPopularTags=true",
+                   headers: headers)
             .responseJSON(completionHandler: { response in
                 switch response.result{
                     case .success(let value):

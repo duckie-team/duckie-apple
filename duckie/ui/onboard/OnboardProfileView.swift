@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct OnboardProfileView: View {
     let onClickNext: () -> Void
+    @State var isPresented = false
     @StateObject var viewModel: OnboardViewModel
+    @State var pickerResult: [UIImage] = []
+    
+    var configuration: PHPickerConfiguration  {
+       var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
+        config.filter = .images //videos, livePhotos...
+        config.selectionLimit = 1 //0 => any, set 1-2-3 for hard limit
+
+        return config
+    }
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -24,10 +35,10 @@ struct OnboardProfileView: View {
                 )
                 Spacer().frame(height:32)
                 ProfileEditButton(
-                    profileUrl: //"http://k.kakaocdn.net/dn/Phk5S/btrI3uKwKnG/QHa33dTjgStZQoTB7e87Gk/img_640x640.jpg",
-                        nil,
+                    profileUrl: nil, //"http://k.kakaocdn.net/dn/Phk5S/btrI3uKwKnG/QHa33dTjgStZQoTB7e87Gk/img_640x640.jpg",
+                    image: pickerResult,
                     onClick: {
-                        print("Profile Edit Click")
+                        isPresented = true
                     }
                 )
                 Spacer().frame(height:32)
@@ -49,7 +60,11 @@ struct OnboardProfileView: View {
             .padding(12)
             .frame(width: UIScreen.main.bounds.width, height: 120)
                 
-        }.onAppear (perform : UIApplication.shared.autoHideKeyboard)
+        }
+        .onAppear (perform : UIApplication.shared.autoHideKeyboard)
+        .sheet(isPresented: $isPresented) {
+            PhotoPicker(configuration: configuration, pickerResult: $pickerResult, isPresented: $isPresented)
+        }
 
     }
 
@@ -85,17 +100,28 @@ struct OnboardProfileView: View {
     @ViewBuilder
     private func ProfileEditButton(
         profileUrl: String?,
+        image: [UIImage],
         onClick: @escaping() -> Void
     ) -> some View {
         ZStack {
-            if (profileUrl != nil){
-                AsyncImage(url: URL(string: profileUrl!))
-                    .clipShape(RoundedRectangle(cornerRadius: 40, style: .continuous))
+            if (!image.isEmpty) {
+                Image(uiImage: image[0])
+                    .resizable()
+                    .frame(width:80, height:80)
+                    .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                     .onTapGesture {
                         onClick()
                     }
+            }
+            else if (profileUrl != nil){
+                AsyncImage(url: URL(string: profileUrl!))
                     .frame(width:80, height:80)
-            } else {
+                    .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                    .onTapGesture {
+                        onClick()
+                    }
+            }
+            else {
                 ZStack {
                     Image.Camera.resizable().frame(width:36, height:36)
                 }
@@ -109,6 +135,53 @@ struct OnboardProfileView: View {
             }
         }.frame(minWidth: 0, maxWidth: .infinity,alignment: .center)
     }
+    
+    struct PhotoPicker: UIViewControllerRepresentable {
+        let configuration: PHPickerConfiguration
+        @Binding var pickerResult: [UIImage]
+        @Binding var isPresented: Bool
+        func makeUIViewController(context: Context) -> PHPickerViewController {
+            let controller = PHPickerViewController(configuration: configuration)
+            controller.delegate = context.coordinator
+            return controller
+        }
+        func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) { }
+        func makeCoordinator() -> Coordinator {
+            Coordinator(self)
+        }
+        
+        /// PHPickerViewControllerDelegate => Coordinator
+        class Coordinator: PHPickerViewControllerDelegate {
+            
+            private let parent: PhotoPicker
+            
+            init(_ parent: PhotoPicker) {
+                self.parent = parent
+            }
+            
+            func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+                
+                for image in results {
+                    if image.itemProvider.canLoadObject(ofClass: UIImage.self)  {
+                        image.itemProvider.loadObject(ofClass: UIImage.self) { (newImage, error) in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            } else {
+                                self.parent.pickerResult = [(newImage as! UIImage)]
+                            }
+                        }
+                    } else {
+                        print("Loaded Assest is not a Image")
+                    }
+                }
+                // dissmiss the picker
+                parent.isPresented = false
+            }
+        
+        }
+    }
+
+    
 }
 
 

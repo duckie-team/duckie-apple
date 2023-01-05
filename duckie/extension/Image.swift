@@ -14,4 +14,5 @@ extension Image {
     static let Delete = Image("delete")
     static let ForwardArrow = Image("forwardArrow")
     static let Camera = Image("camera")
+    static let Close = Image("close")
 }
