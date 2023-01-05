@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardProfileView: View {
     let onClickNext: () -> Void
-    @State var nickname: String = ""
+    @StateObject var viewModel: OnboardViewModel
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -23,13 +23,17 @@ struct OnboardProfileView: View {
                     description: "언제든 변결할 수 있어요. 나만의 이름을 지어봐요 :)"
                 )
                 Spacer().frame(height:32)
-                ProfileEditButton(onClick: {
-                    print("Profile Edit Click")
-                })
+                ProfileEditButton(
+                    profileUrl: //"http://k.kakaocdn.net/dn/Phk5S/btrI3uKwKnG/QHa33dTjgStZQoTB7e87Gk/img_640x640.jpg",
+                        nil,
+                    onClick: {
+                        print("Profile Edit Click")
+                    }
+                )
                 Spacer().frame(height:32)
                 CountableTextField(
                     placeholder: "닉네임 입력",
-                    text : $nickname
+                    text : $viewModel.nickName
                 )
             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 .padding(.horizontal, 20)
@@ -38,15 +42,14 @@ struct OnboardProfileView: View {
                 title: "다음",
                 onClick : {
                     onClickNext()
+                    hideKeyboard()
                 },
-                enabled: nickname.count > 5
+                enabled: viewModel.nickName.count > 5
             )
             .padding(12)
             .frame(width: UIScreen.main.bounds.width, height: 120)
                 
-        }.onTapGesture {
-            
-        }
+        }.onAppear (perform : UIApplication.shared.autoHideKeyboard)
 
     }
 
@@ -57,7 +60,12 @@ struct OnboardProfileView: View {
         text: Binding<String>
     ) -> some View {
         VStack{
-            TextField(placeholder, text: text)
+            HStack {
+                TextField(placeholder, text: text).font(.system(size: 16, weight: .bold, design: .rounded)).kerning(-0.4)
+                Spacer()
+                CountableText(currentLength: text.wrappedValue.count)
+                
+            }
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(Color.Gray3)
@@ -67,22 +75,39 @@ struct OnboardProfileView: View {
     }
     
     @ViewBuilder
-    private func ProfileEditButton(onClick: @escaping() -> Void) -> some View {
+    private func CountableText(currentLength: Int) -> some View{
+        HStack {
+            Body2(text: "\(currentLength)", color: currentLength == 0 ? Color.Gray2 : Color.Black)
+            Body2(text: "/ 10", color: Color.Gray2)
+        }
+    }
+    
+    @ViewBuilder
+    private func ProfileEditButton(
+        profileUrl: String?,
+        onClick: @escaping() -> Void
+    ) -> some View {
         ZStack {
-            AsyncImage(url: URL(string: "http://k.kakaocdn.net/dn/Phk5S/btrI3uKwKnG/QHa33dTjgStZQoTB7e87Gk/img_640x640.jpg")).cornerRadius(12)
+            if (profileUrl != nil){
+                AsyncImage(url: URL(string: profileUrl!))
+                    .clipShape(RoundedRectangle(cornerRadius: 40, style: .continuous))
+                    .onTapGesture {
+                        onClick()
+                    }
+                    .frame(width:80, height:80)
+            } else {
+                ZStack {
+                    Image.Camera.resizable().frame(width:36, height:36)
+                }
+                .frame(width:80, height:80)
+                .background(Color.Gray3)
+                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .onTapGesture {
                     onClick()
                 }
-                .frame(width:80, height:80)
+                
+            }
         }.frame(minWidth: 0, maxWidth: .infinity,alignment: .center)
-    }
-}
-
-
-
-struct OnboardProfile_Preview: PreviewProvider {
-    static var previews: some View {
-        OnboardProfileView(onClickNext: {})
     }
 }
 

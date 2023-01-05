@@ -9,6 +9,14 @@ import Foundation
 import Alamofire
 
 class OnboardViewModel: ObservableObject {
+
+    @Published var nickName: String = "" {
+        didSet {
+            if nickName.count > 10 {
+                nickName = String(nickName.prefix(10))
+            }
+        }
+    }
     @Published var selectedCategories: [Category] = []
     @Published var selectedTags: [Tag] = []
     @Published var categories : [Category] = []
@@ -40,7 +48,7 @@ class OnboardViewModel: ObservableObject {
     }
     
     private func fetch(){
-        AF.request("http://api-staging.goose-duckie.com:3000/categories")
+        AF.request("http://api-staging.goose-duckie.com:3000/categories?withPopularTags=true")
             .responseJSON(completionHandler: { response in
                 switch response.result{
                     case .success(let value):
@@ -59,6 +67,10 @@ class OnboardViewModel: ObservableObject {
                         return
                     }
             })
+    }
+    
+    func finish(){
+        
     }
 }
 

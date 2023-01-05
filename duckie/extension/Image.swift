@@ -12,4 +12,6 @@ extension Image {
     static let BackArrow = Image("backArrow")
     static let Check = Image("check")
     static let Delete = Image("delete")
+    static let ForwardArrow = Image("forwardArrow")
+    static let Camera = Image("camera")
 }

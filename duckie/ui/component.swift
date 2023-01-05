@@ -70,14 +70,17 @@ func SelectableTag(isSelected: Bool, tag: Tag, onClick: @escaping (Tag) -> Void)
 private func CategoryAndPopularTags(selectedTags: [Tag], category: Category, onClick: @escaping (Tag) -> Void) -> some View {
 
     VStack(alignment: .leading){
-        Title2(text: category.name)
+        Title2(text: category.name + " 분야 인기 태그")
         Spacer().frame(height: 12)
-        VFlow(alignment: .leading){
-            ForEach(category.popularTags, id:\.id){ tag in
-                let isSelected = selectedTags.contains(where: {$0.id == tag.id})
-                SelectableTag(isSelected: isSelected, tag: tag, onClick: onClick)
+        ScrollView(.horizontal){
+            HStack{
+                ForEach(category.popularTags, id:\.id){ tag in
+                    let isSelected = selectedTags.contains(where: {$0.id == tag.id})
+                    SelectableTag(isSelected: isSelected, tag: tag, onClick: onClick)
+                }
             }
         }
+        Spacer().frame(height: 12)
     }
 }
 

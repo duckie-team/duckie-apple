@@ -20,7 +20,7 @@ struct OnboardView : View {
             if (index == 0){
                 OnboardProfileView(onClickNext: {
                     moveNext()
-                })
+                }, viewModel: viewModel)
             } else if (index == 1){
                 OnboardCategoryView(
                     onClickPrev: {
